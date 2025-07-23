@@ -9,9 +9,9 @@ public class FirstController {
     public FirstController(){
         System.out.println("creted in FirstController");
     }
-    @RequestMapping("/send")
-    public String sending(){
-        System.out.println("sending method inFirstController");
+    @RequestMapping("/onSend")
+    public String onSend(){
+        System.out.println("onSend method in FirstController");
         return "index.jsp";
     }
 }

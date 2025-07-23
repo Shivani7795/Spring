@@ -15,6 +15,6 @@ public class CarromInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] {"/send"};
+        return new String[] {"/onSend","/name","/fruit","/hospital","/police","/rto"};
     }
 }
