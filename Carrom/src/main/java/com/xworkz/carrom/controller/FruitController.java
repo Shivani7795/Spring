@@ -1,5 +1,6 @@
 package com.xworkz.carrom.controller;
 
+import com.xworkz.carrom.dto.FruitDto;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,30 +16,12 @@ public class FruitController {
 
     @RequestMapping("/fruit")
     public String fruit(
-            @RequestParam String fruitName,
-            @RequestParam String fruitColor,
-            @RequestParam int weight,
-            @RequestParam String placeOfOrigin,
-            @RequestParam String shopKeeperName,
-            @RequestParam String customerName,
-            @RequestParam int price,
-            @RequestParam String presentInSeason,
-            @RequestParam int noOfSeeds,
-            @RequestParam int lifespan,
+            FruitDto fruitDto,
             Model model) {
 
-        System.out.println("Fruit Details Collected");
+        System.out.println("Fruit Details Collected:" + fruitDto);
 
-        model.addAttribute("fruitName", fruitName);
-        model.addAttribute("fruitColor", fruitColor);
-        model.addAttribute("weight", weight);
-        model.addAttribute("placeOfOrigin", placeOfOrigin);
-        model.addAttribute("shopKeeperName", shopKeeperName);
-        model.addAttribute("customerName", customerName);
-        model.addAttribute("price", price);
-        model.addAttribute("presentInSeason", presentInSeason);
-        model.addAttribute("noOfSeeds", noOfSeeds);
-        model.addAttribute("lifespan", lifespan);
+        model.addAttribute("FruitDto",fruitDto);
 
         return "/fruitResult.jsp";
     }

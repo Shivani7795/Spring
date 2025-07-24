@@ -1,5 +1,6 @@
 package com.xworkz.carrom.controller;
 
+import com.xworkz.carrom.dto.RtoDto;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,24 +15,35 @@ public class RTOController {
     }
 
     @RequestMapping("/rto")
-    public String rto(
+
+    /*public String rto(
             Model model,
             @RequestParam("ownerName") String ownerName,
             @RequestParam("vehicleNumber") String vehicleNumber,
             @RequestParam("vehicleType") String vehicleType,
             @RequestParam("vehicleColor") String vehicleColor,
             @RequestParam("purchasedPlace") String purchasedPlace,
-            @RequestParam("purchasedYear") int purchasedYear) {
+            @RequestParam("purchasedYear") int purchasedYear) {*/
 
-        System.out.println("RTO Details: " + ownerName + ", " + vehicleNumber + ", " + vehicleType + ", " +
-                vehicleColor + ", " + purchasedPlace + ", " + purchasedYear);
+    public String rto(
+            Model model,
+            RtoDto rtoDto) {
 
-        model.addAttribute("ownerName", ownerName);
+
+        /*System.out.println("RTO Details: " + ownerName + ", " + vehicleNumber + ", " + vehicleType + ", " +
+                vehicleColor + ", " + purchasedPlace + ", " + purchasedYear);*/
+
+        System.out.println("RTO Details: " + rtoDto);
+
+
+        /*model.addAttribute("ownerName", ownerName);
         model.addAttribute("vehicleNumber", vehicleNumber);
         model.addAttribute("vehicleType", vehicleType);
         model.addAttribute("vehicleColor", vehicleColor);
         model.addAttribute("purchasedPlace", purchasedPlace);
-        model.addAttribute("purchasedYear", purchasedYear);
+        model.addAttribute("purchasedYear", purchasedYear);*/
+
+        model.addAttribute("RTODto",rtoDto);
 
         return "/rtoResult.jsp";
     }

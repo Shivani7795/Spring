@@ -2,9 +2,9 @@
 <html>
 <body>
 <h2>Name Details</h2>
-<h2>First Name: ${firstName}</h2>
-<h2>Middle Name: ${middleName}</h2>
-<h2>Last Name: ${lastName}</h2>
+<h2>First Name: ${NameDto.firstName}</h2>
+<h2>Middle Name: ${NameDto.middleName}</h2>
+<h2>Last Name: ${NameDto.lastName}</h2>
 </body>
 </html>
 
