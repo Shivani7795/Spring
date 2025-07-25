@@ -22,7 +22,9 @@ public class Ice_creamController {
         boolean save = ice_creamService.save(ice_creamDto);
 
         if(save) {
+            Double total = ice_creamService.totalPrice(ice_creamDto);
             model.addAttribute("Ice_creamDto", ice_creamDto);
+            model.addAttribute("total",total);
             return "/OrderSuccess.jsp";
         }else {
             model.addAttribute("error", "Enter valid inputs");

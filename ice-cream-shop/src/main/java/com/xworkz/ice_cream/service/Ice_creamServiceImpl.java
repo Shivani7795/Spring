@@ -11,16 +11,29 @@ import java.util.Map;
 @Service
 public class Ice_creamServiceImpl implements Ice_creamService{
 
-    Map<String,Integer> fPrice = new HashMap<>();
-    List<String> Coupon = new ArrayList<>();
+    Map<String,Double> fPrice = new HashMap<>();
+    Map<String,Double> coupon = new HashMap<>();
+    Map<String,Double> addons = new HashMap<>();
+
 
     public Ice_creamServiceImpl(){
-        fPrice.put("Chocolate", 70);
-        fPrice.put("Vanilla", 60);
-        fPrice.put("Strawberry", 65);
-        fPrice.put("Mango", 55);
-        fPrice.put("Butterscotch", 75);
-        fPrice.put("Black Current", 80);
+        fPrice.put("Chocolate", 70.0);
+        fPrice.put("Vanilla", 60.0);
+        fPrice.put("Strawberry", 65.0);
+        fPrice.put("Mango", 55.0);
+        fPrice.put("Butterscotch", 75.0);
+        fPrice.put("Black Current", 80.0);
+
+        coupon.put("123qwe",30.0);
+        coupon.put("456qwe",40.0);
+        coupon.put("789qwe",50.0);
+
+        addons.put("Choco Chips",5.0);
+        addons.put("Nuts",6.0);
+        addons.put("Nutella",7.0);
+        addons.put("Sprinkles",8.0);
+        addons.put("Crumbled Brownie",9.0);
+
     }
 
     @Override
@@ -35,7 +48,7 @@ public class Ice_creamServiceImpl implements Ice_creamService{
             return false;
         }
 
-        if (ice_creamDto.getFlavour().length() <= 2 || ice_creamDto.getFlavour().length() >= 20) {
+        if (!fPrice.containsKey(ice_creamDto.getFlavour())) {
             System.out.println("Flavour is invalid");
             return false;
         }
@@ -45,28 +58,37 @@ public class Ice_creamServiceImpl implements Ice_creamService{
             return false;
         }
 
-        if ((!ice_creamDto.getTakeAway().equalsIgnoreCase("yes") && !ice_creamDto.getTakeAway().equalsIgnoreCase("no"))) {
+        if (ice_creamDto.getTakeAway() == null) {
             System.out.println("Take Away input is invalid");
             return false;
         }
 
-        if (ice_creamDto.getAddons().length() < 0 || ice_creamDto.getAddons().length() > 50) {
+        if (!addons.containsKey(ice_creamDto.getAddons())) {
             System.out.println("Addons info is invalid");
             return false;
         }
 
-        if (ice_creamDto.getCoupon().length() < 2 || ice_creamDto.getCoupon().length() > 20) {
+        if (!coupon.containsKey(ice_creamDto.getCoupon())) {
             System.out.println("Coupon is invalid");
             return false;
         }
-
-        String selectedFlavour = ice_creamDto.getFlavour();
-        Integer pricePerScoop = fPrice.getOrDefault(selectedFlavour, 50);
-        int total = pricePerScoop * ice_creamDto.getQuantity();
-
-        System.out.println("Unit Price for " + selectedFlavour + ": ₹" + pricePerScoop);
-        System.out.println("Total Price for " + ice_creamDto.getQuantity() + " scoops: ₹" + total);
-
         return true;
+    }
+
+    @Override
+    public Double totalPrice(Ice_creamDto ice_creamDto) {
+        Double price = fPrice.get(ice_creamDto.getFlavour());
+        Double addonPrice = addons.get(ice_creamDto.getAddons());
+        Double couponPrice = coupon.get(ice_creamDto.getCoupon());
+        Double totalPrice = price * ice_creamDto.getQuantity();
+
+        if(addons.containsKey(ice_creamDto.getAddons())){
+            totalPrice = totalPrice + addonPrice;
+        }
+
+        if(coupon.containsKey(ice_creamDto.getCoupon())){
+            totalPrice = totalPrice * (couponPrice/100);
+        }
+        return totalPrice;
     }
 }

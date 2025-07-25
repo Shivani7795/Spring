@@ -4,4 +4,5 @@ import com.xworkz.ice_cream.dto.Ice_creamDto;
 
 public interface Ice_creamService {
     boolean save (Ice_creamDto ice_creamDto);
+    Double totalPrice(Ice_creamDto ice_creamDto);
 }

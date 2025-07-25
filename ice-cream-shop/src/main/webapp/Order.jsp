@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page isELIgnored="false" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,6 +76,7 @@
     </style>
 </head>
 <body>
+<h1>${error}</h1>
 
 <div class="form-container">
     <h1>Place Your Order</h1>
