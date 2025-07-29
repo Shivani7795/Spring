@@ -2,7 +2,7 @@ package com.xworkz.ice_cream.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class Ice_creamInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class IceCreamInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[0];
@@ -10,7 +10,7 @@ public class Ice_creamInitializer extends AbstractAnnotationConfigDispatcherServ
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {Ice_creamConfiguration.class};
+        return new Class[] {IceCreamConfiguration.class};
     }
 
     @Override

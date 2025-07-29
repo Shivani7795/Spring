@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.xworkz.ice_cream")
-public class Ice_creamConfiguration {
-    public Ice_creamConfiguration(){
+public class IceCreamConfiguration {
+    public IceCreamConfiguration(){
         System.out.println("created Ice_creamConfiguration");
     }
 }

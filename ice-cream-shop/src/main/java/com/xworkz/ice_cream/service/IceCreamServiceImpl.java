@@ -1,22 +1,20 @@
 package com.xworkz.ice_cream.service;
 
-import com.xworkz.ice_cream.dto.Ice_creamDto;
+import com.xworkz.ice_cream.dto.IceCreamDto;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
-public class Ice_creamServiceImpl implements Ice_creamService{
+public class IceCreamServiceImpl implements IceCreamService {
 
     Map<String,Double> fPrice = new HashMap<>();
     Map<String,Double> coupon = new HashMap<>();
     Map<String,Double> addons = new HashMap<>();
 
 
-    public Ice_creamServiceImpl(){
+    public IceCreamServiceImpl(){
         fPrice.put("Chocolate", 70.0);
         fPrice.put("Vanilla", 60.0);
         fPrice.put("Strawberry", 65.0);
@@ -37,7 +35,7 @@ public class Ice_creamServiceImpl implements Ice_creamService{
     }
 
     @Override
-    public boolean save(Ice_creamDto ice_creamDto) {
+    public boolean save(IceCreamDto ice_creamDto) {
         if (ice_creamDto == null){
             System.out.println("Ice_creamDto is null");
             return false;
@@ -76,11 +74,11 @@ public class Ice_creamServiceImpl implements Ice_creamService{
     }
 
     @Override
-    public Double totalPrice(Ice_creamDto ice_creamDto) {
+    public Double totalPrice(IceCreamDto ice_creamDto) {
         Double price = fPrice.get(ice_creamDto.getFlavour());
         Double addonPrice = addons.get(ice_creamDto.getAddons());
         Double couponPrice = coupon.get(ice_creamDto.getCoupon());
-        Double totalPrice = price * ice_creamDto.getQuantity();
+        double totalPrice = price * ice_creamDto.getQuantity();
 
         if(addons.containsKey(ice_creamDto.getAddons())){
             totalPrice = totalPrice + addonPrice;

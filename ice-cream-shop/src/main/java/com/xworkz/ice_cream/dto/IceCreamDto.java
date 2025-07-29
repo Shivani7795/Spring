@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @AllArgsConstructor
-public class Ice_creamDto {
+public class IceCreamDto {
     private String name;
     private String flavour;
     private Integer quantity;
