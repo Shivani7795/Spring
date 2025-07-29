@@ -1,4 +1,4 @@
-package com.xworkz.dmart;
+package com.xworkz.dmart.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
