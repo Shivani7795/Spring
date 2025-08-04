@@ -80,7 +80,11 @@
 
 <div class="form-container">
     <h1>Place Your Order</h1>
-    <form action="order">
+    <form action="order" method="Post" enctype="multipart/form-data">
+
+        <input type="file" name="multipartFile" /><br/>
+
+
 
         <label for="name">Customer Name:</label>
         <input type="text" name="name" id="name" required>

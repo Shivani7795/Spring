@@ -36,41 +36,42 @@ public class IceCreamServiceImpl implements IceCreamService {
 
     @Override
     public boolean save(IceCreamDto ice_creamDto) {
-        if (ice_creamDto == null){
-            System.out.println("Ice_creamDto is null");
-            return false;
-        }
+        if (ice_creamDto != null)
+        {
+            if (ice_creamDto.getName().length() < 2 || ice_creamDto.getName().length() > 30) {
+                System.out.println("Customer name is invalid");
+                return false;
+            }
 
-        if ( ice_creamDto.getName().length()<2 || ice_creamDto.getName().length()>30){
-            System.out.println("Customer name is invalid");
-            return false;
-        }
+            if (!fPrice.containsKey(ice_creamDto.getFlavour())) {
+                System.out.println("Flavour is invalid");
+                return false;
+            }
 
-        if (!fPrice.containsKey(ice_creamDto.getFlavour())) {
-            System.out.println("Flavour is invalid");
-            return false;
-        }
+            if (ice_creamDto.getQuantity() < 0) {
+                System.out.println("Quantity is invalid");
+                return false;
+            }
 
-        if (ice_creamDto.getQuantity() < 0) {
-            System.out.println("Quantity is invalid");
-            return false;
-        }
+            if (ice_creamDto.getTakeAway() == null) {
+                System.out.println("Take Away input is invalid");
+                return false;
+            }
 
-        if (ice_creamDto.getTakeAway() == null) {
-            System.out.println("Take Away input is invalid");
-            return false;
-        }
+            if (!addons.containsKey(ice_creamDto.getAddons())) {
+                System.out.println("Addons info is invalid");
+                return false;
+            }
 
-        if (!addons.containsKey(ice_creamDto.getAddons())) {
-            System.out.println("Addons info is invalid");
-            return false;
+            if (!coupon.containsKey(ice_creamDto.getCoupon())) {
+                System.out.println("Coupon is invalid");
+                return false;
+            }
+            System.out.println("validation passed");
+            return true;
         }
-
-        if (!coupon.containsKey(ice_creamDto.getCoupon())) {
-            System.out.println("Coupon is invalid");
-            return false;
-        }
-        return true;
+        System.out.println("validation failed");
+        return false;
     }
 
     @Override
@@ -90,3 +91,4 @@ public class IceCreamServiceImpl implements IceCreamService {
         return totalPrice;
     }
 }
+
