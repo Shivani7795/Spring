@@ -47,6 +47,7 @@ public class IceCreamController {
             model.addAttribute("error", "Enter valid inputs");
         }
 
+
             return "/Order.jsp";
         }
 
