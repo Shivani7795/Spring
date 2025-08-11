@@ -48,9 +48,6 @@ public class IceCreamController {
         }
 
 
-
-
-
             return "/Order.jsp";
         }
     }
