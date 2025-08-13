@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Data
 public class IceCreamDto {
 
+
 //    @Size(min=2,max=50)
     private String name;
     private String flavour;
