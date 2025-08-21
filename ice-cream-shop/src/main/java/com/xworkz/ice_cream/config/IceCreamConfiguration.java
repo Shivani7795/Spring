@@ -16,6 +16,9 @@ public class IceCreamConfiguration {
     public IceCreamConfiguration(){
         System.out.println("created Ice_creamConfiguration");
     }
+
+
+
     @Bean
     public MultipartResolver multipartResolver() {
         return new StandardServletMultipartResolver();
