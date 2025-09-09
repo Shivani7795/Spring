@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Entity
 @ToString
 @Table(name = "product_info")
+
 public class ProductEntity {
 
     @Id
