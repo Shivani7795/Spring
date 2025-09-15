@@ -30,4 +30,4 @@ public class ProductEntity {
     @Column(name = "company")
     private String company;
 }
-}}
+
