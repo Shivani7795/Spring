@@ -110,4 +110,11 @@ public Double totalPrice(IceCreamDto ice_creamDto) {
         totalPrice = totalPrice * (couponPrice/100);
     }
     return totalPrice;
+    if(addons.containsKey(ice_creamDto.getAddons())){
+        totalPrice = totalPrice + addonPrice;
+    }
+    if(coupon.containsKey(ice_creamDto.getCoupon())){
+        totalPrice = totalPrice * (couponPrice/100);
+    }
+    return totalPrice;
 }
