@@ -31,4 +31,5 @@ public class ProductEntity {
     private String company;
 }
 
-
+@Column(name = "productName")
+private String productName;
