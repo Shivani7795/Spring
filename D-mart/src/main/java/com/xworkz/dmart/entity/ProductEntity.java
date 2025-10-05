@@ -33,3 +33,6 @@ public class ProductEntity {
 
 @Column(name = "productName")
 private String productName;
+
+@Column(name = "company")
+private String company;
