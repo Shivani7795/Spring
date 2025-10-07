@@ -36,3 +36,6 @@ private String productName;
 
 @Column(name = "company")
 private String company;
+
+@Column(name = "mfd")
+private String mfd;
