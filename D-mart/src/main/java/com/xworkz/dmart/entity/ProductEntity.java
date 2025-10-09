@@ -42,3 +42,6 @@ private String mfd;
 
 @Column(name = "productName")
 private String productName;
+
+@Column(name = "productName")
+private String productName;
