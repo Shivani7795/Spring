@@ -92,22 +92,3 @@ public class IceCreamServiceImpl implements IceCreamService {
         return totalPrice;
     }
 }
-
-
-
-Double price = fPrice.get(ice_creamDto.getFlavour());
-Double addonPrice = addons.get(ice_creamDto.getAddons());
-Double couponPrice = coupon.get(ice_creamDto.getCoupon());
-double totalPrice = price * ice_creamDto.getQuantity();
-
-
-Double price = fPrice.get(ice_creamDto.getFlavour());
-Double addonPrice = addons.get(ice_creamDto.getAddons());
-Double couponPrice = coupon.get(ice_creamDto.getCoupon());
-double totalPrice = price * ice_creamDto.getQuantity();
-
-
-Double price = fPrice.get(ice_creamDto.getFlavour());
-Double addonPrice = addons.get(ice_creamDto.getAddons());
-Double couponPrice = coupon.get(ice_creamDto.getCoupon());
-double totalPrice = price * ice_creamDto.getQuantity();
