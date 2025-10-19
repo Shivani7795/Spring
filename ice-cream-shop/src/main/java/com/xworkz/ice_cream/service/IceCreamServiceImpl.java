@@ -92,3 +92,8 @@ public class IceCreamServiceImpl implements IceCreamService {
         return totalPrice;
     }
 }
+
+
+ if(coupon.containsKey(ice_creamDto.getCoupon())){
+totalPrice = totalPrice * (couponPrice/100);
+        }
