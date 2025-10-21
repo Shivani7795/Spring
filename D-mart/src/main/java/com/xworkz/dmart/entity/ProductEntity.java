@@ -45,3 +45,15 @@ private String productName;
 
 @Column(name = "productName")
 private String productName;
+
+@Column(name = "company")
+private String company;
+
+@Column(name = "mfd")
+private String mfd;
+
+@Column(name = "productName")
+private String productName;
+
+@Column(name = "productName")
+private String productName;
